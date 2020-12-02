@@ -12,4 +12,8 @@ public class Adotante {
         this.cpf = cpf;
         this.endereco = endereco;
     }
+
+    public void adotar(Animais animal){
+        this.animaisAdotados.add(animal);
+    }
 }

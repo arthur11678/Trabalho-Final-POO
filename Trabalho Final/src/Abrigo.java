@@ -1,7 +1,4 @@
 import java.util.ArrayList;
-
-import sun.net.www.content.text.plain;
-
 public class Abrigo {
     ArrayList<Animais> animais = new ArrayList<Animais>();
     String nomeAbrigo;
@@ -25,5 +22,9 @@ public class Abrigo {
     
     public ArrayList<Animais> listarAnimais(){
         return this.animais;
+    }
+    public void adotarAnimal(Adotante adotante, Animais animal){
+        this.animais.remove(animal);
+        adotante.adotar(animal);
     }
 }
