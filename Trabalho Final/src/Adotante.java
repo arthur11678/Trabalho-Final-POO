@@ -16,4 +16,8 @@ public class Adotante {
     public void adotar(Animais animal){
         this.animaisAdotados.add(animal);
     }
+
+    public ArrayList<Animais> listarAnimais(){
+        return this.animaisAdotados;
+    }
 }
