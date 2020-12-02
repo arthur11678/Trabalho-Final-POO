@@ -1,0 +1,25 @@
+Grupo: Adocão
+
+O Adocão vai ser um sistema de adoção de animais, que vai abordar:
+Entrada de animais no Abrigo
+Registrar Animais
+Registrar Abrigos
+Registrar Adotantes
+Dar saída de Animais do Abrigo para um adotante
+visão geral de todos os animais registrados
+visão geral de todos os abrigos registrados
+visão geral de todos os adotantes cadastrados
+visão geral de todas as entradas de animais
+visão geral de todas as saídas de animais
+Menu geral para acesso as funcionalidades
+
+Participantes e responsabilidades:
+Lucas Couto
+implementar classe Animais
+implementar classe Adotantes
+implementar class Abrigo
+
+Rafael Mascarenhas
+Movimentações de Animais
+Interface de interação com o usuário
+
