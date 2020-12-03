@@ -75,7 +75,7 @@ public class App {
 
             }else if(acao == 5){
                 String nome;
-                String animal;
+                int animal;
                 String raça;
                 String cor;
                 int idade = 0;
@@ -90,8 +90,8 @@ public class App {
                 System.out.println("Qual a raça? Se não souber deixe em branco");
                 System.out.println("1 - Cachorro");
                 System.out.println("2 - Gato");
-                animal = teclado.nextLine();
-                if(animal == "1"){
+                animal = teclado.nextInt();
+                if(animal == 1){
                     if(raça == "" && idade == 0){
                         animais.add(new Cachorro(nome, "Cachorro", cor));
                     }else if(raça == ""){
