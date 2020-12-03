@@ -23,9 +23,9 @@ public class App {
                 String nomeAbrigo;
                 String nomeDono;
                 System.out.println("Digite o nome do abrigo");
-                nomeAbrigo = teclado.nextLine();
+                nomeAbrigo = teclado.next();
                 System.out.println("Digite o nome do dono");
-                nomeDono = teclado.nextLine();
+                nomeDono = teclado.next();
                 abrigos.add(new Abrigo(nomeAbrigo, nomeDono));
                 System.out.println("Abrigo cadastrado com sucesso!");
 
@@ -39,11 +39,11 @@ public class App {
                 String cpf;
                 String endereço;
                 System.out.println("Digite o nome do adotante");
-                nome = teclado.nextLine();
+                nome = teclado.next();
                 System.out.println("Digite o CPF");
-                cpf = teclado.nextLine();
+                cpf = teclado.next();
                 System.out.println("Digite o endereço");
-                endereço = teclado.nextLine();
+                endereço = teclado.next();
                 adotantes.add(new Adotante(nome, cpf, endereço));
             }else if(acao == 4){
                 boolean abrigoExiste = false;
@@ -51,9 +51,9 @@ public class App {
                 String nomeAbrigo;
                 String nomeAdotante;
                 System.out.println("Digite o nome do abrigo para registrar o adotante");
-                nomeAbrigo = teclado.nextLine();
+                nomeAbrigo = teclado.next();
                 System.out.println("Digite o nome do adotante a ser registrado");
-                nomeAdotante = teclado.nextLine();
+                nomeAdotante = teclado.next();
                 for(Abrigo abrigo : abrigos){
                     if(abrigo.getNomeAbrigo() == nomeAbrigo){
                         abrigoExiste = true;
@@ -80,11 +80,11 @@ public class App {
                 String cor;
                 int idade = 0;
                 System.out.println("Digite o nome do animal");
-                nome = teclado.nextLine();
+                nome = teclado.next();
                 System.out.println("Qual é o tipo do animal?");
-                raça = teclado.nextLine();
+                raça = teclado.next();
                 System.out.println("Qual a cor do animal?");
-                cor = teclado.nextLine();
+                cor = teclado.next();
                 System.out.println("Qual a idade do animal? Se não suber deixe em branco");
                 idade = teclado.nextInt();
                 System.out.println("Qual a raça? Se não souber deixe em branco");
@@ -114,9 +114,9 @@ public class App {
                 String nomeAbrigo;
                 String nomeAnimal;
                 System.out.println("Digite o nome do abrigo para registrar o adotante");
-                nomeAbrigo = teclado.nextLine();
+                nomeAbrigo = teclado.next();
                 System.out.println("Digite o nome do animal a ser registrado");
-                nomeAnimal = teclado.nextLine();
+                nomeAnimal = teclado.next();
                 for(Abrigo abrigo : abrigos){
                     if(abrigo.getNomeAbrigo() == nomeAbrigo){
                         abrigoExiste = true;
@@ -140,7 +140,7 @@ public class App {
                 boolean abrigoExiste = false;
                 String nomeAbrigo;
                 System.out.println("Digite o nome do abrigo para listar os animais");
-                nomeAbrigo = teclado.nextLine();
+                nomeAbrigo = teclado.next();
                 for(Abrigo abrigo : abrigos){
                     if(abrigo.getNomeAbrigo() == nomeAbrigo){
                         abrigoExiste = true;
@@ -158,11 +158,11 @@ public class App {
                 String nomeAdotante;
                 String nomeAnimal;
                 System.out.println("Digite o nome do abrigo onde o animal esta");
-                nomeAbrigo = teclado.nextLine();
+                nomeAbrigo = teclado.next();
                 System.out.println("Digite o nome do adotante");
-                nomeAdotante = teclado.nextLine();
+                nomeAdotante = teclado.next();
                 System.out.println("Digite o nome do animal");
-                nomeAnimal = teclado.nextLine();
+                nomeAnimal = teclado.next();
                 for(Adotante adotante : adotantes){
                     if(adotante.getNome() == nomeAdotante){
                         adotanteExiste = true;
