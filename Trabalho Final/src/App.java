@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args){
         Scanner teclado = new Scanner(System.in);
-        String acao;
+        int acao;
         ArrayList<Abrigo> abrigos = new ArrayList<Abrigo>();
         ArrayList<Adotante> adotantes = new ArrayList<Adotante>();
         ArrayList<Animais> animais = new ArrayList<Animais>();
@@ -18,8 +18,8 @@ public class App {
             System.out.println("7 - Listar todos os animais de um abrigo");
             System.out.println("8 - Adotar um animal");
             System.out.println("9 - Fechar o programa");
-            acao = teclado.nextLine();
-            if(acao == "1"){
+            acao = teclado.nextInt();
+            if(acao == 1){
                 String nomeAbrigo;
                 String nomeDono;
                 System.out.println("Digite o nome do abrigo");
@@ -29,12 +29,12 @@ public class App {
                 abrigos.add(new Abrigo(nomeAbrigo, nomeDono));
                 System.out.println("Abrigo cadastrado com sucesso!");
 
-            }else if(acao == "2"){
+            }else if(acao == 2){
                 int i = 1;
                 for(Abrigo abrigo : abrigos){
                     System.out.println(Integer.toString(i) + " - " + abrigo.getNomeAbrigo());
                 }
-            }else if(acao == "3"){
+            }else if(acao == 3){
                 String nome;
                 String cpf;
                 String endereço;
@@ -45,7 +45,7 @@ public class App {
                 System.out.println("Digite o endereço");
                 endereço = teclado.nextLine();
                 adotantes.add(new Adotante(nome, cpf, endereço));
-            }else if(acao == "4"){
+            }else if(acao == 4){
                 boolean abrigoExiste = false;
                 boolean adotanteExiste = false;
                 String nomeAbrigo;
@@ -73,7 +73,7 @@ public class App {
                     System.out.println("O adotante foi registrado com sucesso!");
                 }
 
-            }else if(acao == "5"){
+            }else if(acao == 5){
                 String nome;
                 String animal;
                 String raça;
@@ -108,7 +108,7 @@ public class App {
                         animais.add(new Gato(nome, "Cachorro", raça, cor));
                     }
                 }
-            }else if(acao == "6"){
+            }else if(acao == 6){
                 boolean abrigoExiste = false;
                 boolean animalExiste = false;
                 String nomeAbrigo;
@@ -136,7 +136,7 @@ public class App {
                     System.out.println("O animal foi registrado com sucesso!");
                 }
 
-            }else if(acao == " 7"){
+            }else if(acao == 7){
                 boolean abrigoExiste = false;
                 String nomeAbrigo;
                 System.out.println("Digite o nome do abrigo para listar os animais");
@@ -150,7 +150,7 @@ public class App {
                 if(!abrigoExiste){
                     System.out.println("O abrigo digitado não existe");
                 }
-            }else if(acao == "8"){
+            }else if(acao == 8){
                 boolean abrigoExiste = false;
                 boolean animalExiste = false;
                 boolean adotanteExiste = false;
@@ -189,7 +189,7 @@ public class App {
                     System.out.println("O animal foi adotado com sucesso!");
                 }
 
-            }else if(acao == "9"){
+            }else if(acao == 9){
                 isRunning = false;
             }
         }
