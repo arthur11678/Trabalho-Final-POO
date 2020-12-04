@@ -1,7 +1,8 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class App {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
         Scanner teclado = new Scanner(System.in);
         int acao;
         ArrayList<Abrigo> abrigos = new ArrayList<Abrigo>();
@@ -9,6 +10,7 @@ public class App {
         ArrayList<Animais> animais = new ArrayList<Animais>();
         boolean isRunning = true;
         while(isRunning){
+            clrscr();
             System.out.println("1 - Registrar um abrigo");
             System.out.println("2 - Listar abrigos");
             System.out.println("3 - Criar um adotante");
@@ -28,12 +30,16 @@ public class App {
                 nomeDono = teclado.next();
                 abrigos.add(new Abrigo(nomeAbrigo, nomeDono));
                 System.out.println("Abrigo cadastrado com sucesso!");
+                System.out.println("Aperte Enter para voltar ao menu");
+                System.in.read();
 
             }else if(acao == 2){
                 int i = 1;
                 for(Abrigo abrigo : abrigos){
                     System.out.println(Integer.toString(i) + " - " + abrigo.getNomeAbrigo());
                 }
+                System.out.println("Aperte Enter para voltar ao menu");
+                System.in.read();
             }else if(acao == 3){
                 String nome;
                 String cpf;
@@ -45,6 +51,10 @@ public class App {
                 System.out.println("Digite o endereço");
                 endereço = teclado.next();
                 adotantes.add(new Adotante(nome, cpf, endereço));
+                System.out.println("Adotante criado com sucesso!");
+                System.out.println("Aperte Enter para voltar ao menu");
+                System.in.read();
+
             }else if(acao == 4){
                 boolean abrigoExiste = false;
                 boolean adotanteExiste = false;
@@ -72,6 +82,8 @@ public class App {
                 }else{
                     System.out.println("O adotante foi registrado com sucesso!");
                 }
+                System.out.println("Aperte Enter para voltar ao menu");
+                System.in.read();
 
             }else if(acao == 5){
                 String nome;
@@ -108,6 +120,8 @@ public class App {
                         animais.add(new Gato(nome, "Cachorro", raça, cor));
                     }
                 }
+                System.out.println("Aperte Enter para voltar ao menu");
+                System.in.read();
             }else if(acao == 6){
                 boolean abrigoExiste = false;
                 boolean animalExiste = false;
@@ -135,6 +149,8 @@ public class App {
                 }else{
                     System.out.println("O animal foi registrado com sucesso!");
                 }
+                System.out.println("Aperte Enter para voltar ao menu");
+                System.in.read();
 
             }else if(acao == 7){
                 boolean abrigoExiste = false;
@@ -150,6 +166,9 @@ public class App {
                 if(!abrigoExiste){
                     System.out.println("O abrigo digitado não existe");
                 }
+                System.out.println("Aperte Enter para voltar ao menu");
+                System.in.read();
+
             }else if(acao == 8){
                 boolean abrigoExiste = false;
                 boolean animalExiste = false;
@@ -188,12 +207,25 @@ public class App {
                 }else{
                     System.out.println("O animal foi adotado com sucesso!");
                 }
+                System.out.println("Aperte Enter para voltar ao menu");
+                System.in.read();
 
             }else if(acao == 9){
                 isRunning = false;
             }
         }
         teclado.close();
+    }
+
+
+    public static void clrscr(){
+        //Clears Screen in java
+        try {
+            if (System.getProperty("os.name").contains("Windows"))
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            else
+                Runtime.getRuntime().exec("clear");
+        } catch (IOException | InterruptedException ex) {}
     }
     
 }
