@@ -22,6 +22,7 @@ public class App {
             System.out.println("9 - Fechar o programa");
             acao = teclado.nextInt();
             if(acao == 1){
+                clrscr();
                 String nomeAbrigo;
                 String nomeDono;
                 System.out.println("Digite o nome do abrigo");
@@ -34,6 +35,7 @@ public class App {
                 System.in.read();
 
             }else if(acao == 2){
+                clrscr();
                 int i = 1;
                 for(Abrigo abrigo : abrigos){
                     System.out.println(Integer.toString(i) + " - " + abrigo.getNomeAbrigo());
@@ -41,6 +43,7 @@ public class App {
                 System.out.println("Aperte Enter para voltar ao menu");
                 System.in.read();
             }else if(acao == 3){
+                clrscr();
                 String nome;
                 String cpf;
                 String endereço;
@@ -56,6 +59,7 @@ public class App {
                 System.in.read();
 
             }else if(acao == 4){
+                clrscr();
                 boolean abrigoExiste = false;
                 boolean adotanteExiste = false;
                 String nomeAbrigo;
@@ -86,6 +90,7 @@ public class App {
                 System.in.read();
 
             }else if(acao == 5){
+                clrscr();
                 String nome;
                 int animal;
                 String raça;
@@ -122,7 +127,9 @@ public class App {
                 }
                 System.out.println("Aperte Enter para voltar ao menu");
                 System.in.read();
+
             }else if(acao == 6){
+                clrscr();
                 boolean abrigoExiste = false;
                 boolean animalExiste = false;
                 String nomeAbrigo;
@@ -153,6 +160,7 @@ public class App {
                 System.in.read();
 
             }else if(acao == 7){
+                clrscr();
                 boolean abrigoExiste = false;
                 String nomeAbrigo;
                 System.out.println("Digite o nome do abrigo para listar os animais");
@@ -170,6 +178,7 @@ public class App {
                 System.in.read();
 
             }else if(acao == 8){
+                clrscr();
                 boolean abrigoExiste = false;
                 boolean animalExiste = false;
                 boolean adotanteExiste = false;
