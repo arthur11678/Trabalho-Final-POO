@@ -46,14 +46,14 @@ public class App {
                 clrscr();
                 String nome;
                 String cpf;
-                String endereço;
+                String endereco;
                 System.out.println("Digite o nome do adotante");
                 nome = teclado.next();
                 System.out.println("Digite o CPF");
                 cpf = teclado.next();
                 System.out.println("Digite o endereço");
-                endereço = teclado.next();
-                adotantes.add(new Adotante(nome, cpf, endereço));
+                endereco = teclado.next();
+                adotantes.add(new Adotante(nome, cpf, endereco));
                 System.out.println("Adotante criado com sucesso!");
                 System.out.println("Aperte Enter para voltar ao menu");
                 System.in.read();
@@ -93,13 +93,13 @@ public class App {
                 clrscr();
                 String nome;
                 int animal;
-                String raça;
+                String raca;
                 String cor;
                 int idade = 0;
                 System.out.println("Digite o nome do animal");
                 nome = teclado.next();
                 System.out.println("Qual é o tipo do animal?");
-                raça = teclado.next();
+                raca = teclado.next();
                 System.out.println("Qual a cor do animal?");
                 cor = teclado.next();
                 System.out.println("Qual a idade do animal? Se não suber deixe em branco");
@@ -109,20 +109,20 @@ public class App {
                 System.out.println("2 - Gato");
                 animal = teclado.nextInt();
                 if(animal == 1){
-                    if(raça == "" && idade == 0){
+                    if(raca == "" && idade == 0){
                         animais.add(new Cachorro(nome, "Cachorro", cor));
-                    }else if(raça == ""){
+                    }else if(raca == ""){
                         animais.add(new Cachorro(nome, "Cachorro", cor, idade));
                     }else if(idade == 0){
-                        animais.add(new Cachorro(nome, "Cachorro", raça, cor));
+                        animais.add(new Cachorro(nome, "Cachorro", raca, cor));
                     }
                 }else{
-                    if(raça == "" && idade == 0){
+                    if(raca == "" && idade == 0){
                         animais.add(new Gato(nome, "Cachorro", cor));
-                    }else if(raça == ""){
+                    }else if(raca == ""){
                         animais.add(new Gato(nome, "Cachorro", cor, idade));
                     }else if(idade == 0){
-                        animais.add(new Gato(nome, "Cachorro", raça, cor));
+                        animais.add(new Gato(nome, "Cachorro", raca, cor));
                     }
                 }
                 System.out.println("Aperte Enter para voltar ao menu");

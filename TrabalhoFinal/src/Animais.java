@@ -1,7 +1,7 @@
 abstract class Animais {
     private String nome;
     private String animal;
-    private String raça;
+    private String raca;
     private String cor;
     private int idade;
 
@@ -11,8 +11,8 @@ abstract class Animais {
     public void setAnimal(String animal){
         this.animal = animal;
     }
-    public void setRaça(String raça){
-        this.raça = raça;
+    public void setRaca(String raca){
+        this.raca = raca;
     }
     public void setCor(String cor){
         this.cor = cor;
@@ -26,8 +26,8 @@ abstract class Animais {
     public String getAnimal(){
         return this.animal;
     }
-    public String getRaça(){
-        return this.raça;
+    public String getRaca(){
+        return this.raca;
     }
     public String getCor(){
         return this.cor;
