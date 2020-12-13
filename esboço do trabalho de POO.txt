@@ -14,12 +14,13 @@ visão geral de todas as saídas de animais
 Menu geral para acesso as funcionalidades
 
 Participantes e responsabilidades:
+Arthur Pinheiro
+Implementar classe Animal
+Implementar classe Adotantes
+
 Lucas Couto
-implementar classe Animais
-implementar classe Adotantes
-implementar class Abrigo
+Implementar Interface Visual(Função Principal)
 
 Rafael Mascarenhas
-Movimentações de Animais
-Interface de interação com o usuário
+Implementar classe Abrigo
 
