@@ -156,12 +156,8 @@ public class App {
                 nomeAnimal = teclado.next();
                 for(Abrigo abrigo : abrigos){
                     if(nomeAbrigo.equals(abrigo.getNomeAbrigo())){
-                        System.out.println(abrigo.getNomeAbrigo());
-                        System.out.println(nomeAnimal);
                         abrigoExiste = true;
                         for(Animal animal : animais){
-                            System.out.println(animal.getNome());
-                            System.out.println(nomeAnimal);
                             if(nomeAnimal.equals(animal.getNome())){
                                 animalExiste = true;
                                 abrigo.registrarAnimal(animal);
