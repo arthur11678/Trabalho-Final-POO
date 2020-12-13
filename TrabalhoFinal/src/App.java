@@ -47,11 +47,11 @@ public class App {
                 String nome;
                 String cpf;
                 String endereco;
-                System.out.println("Digite o nome do adotante");
+                System.out.println("Digite o nome do adotante:");
                 nome = teclado.next();
-                System.out.println("Digite o CPF");
+                System.out.println("Agora digite o CPF:");
                 cpf = teclado.next();
-                System.out.println("Digite o endereço");
+                System.out.println("Por fim, digite o endereço:");
                 endereco = teclado.next();
                 adotantes.add(new Adotante(nome, cpf, endereco));
                 System.out.println("Adotante criado com sucesso!");
@@ -102,7 +102,7 @@ public class App {
                 raca = teclado.next();
                 System.out.println("Qual a cor do animal?");
                 cor = teclado.next();
-                System.out.println("Qual a idade do animal? Se não suber deixe em branco");
+                System.out.println("Qual a idade do animal em anos? Se não souber deixe em branco (APENAS NUMEROS)");
                 idade = teclado.nextInt();
                 System.out.println("Qual a raça? Se não souber deixe em branco");
                 System.out.println("1 - Cachorro");
