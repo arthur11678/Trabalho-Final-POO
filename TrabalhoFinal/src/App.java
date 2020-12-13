@@ -39,6 +39,7 @@ public class App {
                 int i = 1;
                 for(Abrigo abrigo : abrigos){
                     System.out.println(Integer.toString(i) + " - " + abrigo.getNomeAbrigo());
+                    i++;
                 }
                 System.out.println("Aperte Enter para voltar ao menu");
                 System.in.read();
@@ -69,10 +70,10 @@ public class App {
                 System.out.println("Digite o nome do adotante a ser registrado");
                 nomeAdotante = teclado.next();
                 for(Abrigo abrigo : abrigos){
-                    if(abrigo.getNomeAbrigo() == nomeAbrigo){
+                    if(nomeAbrigo.equals(abrigo.getNomeAbrigo())){
                         abrigoExiste = true;
                         for(Adotante adotante : adotantes){
-                            if(adotante.getNome() == nomeAdotante){
+                            if(nomeAdotante.equals(adotante.getNome())){
                                 adotanteExiste = true;
                                 abrigo.registrarAdotante(adotante);
                             }
