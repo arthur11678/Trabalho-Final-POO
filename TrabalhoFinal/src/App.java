@@ -7,7 +7,7 @@ public class App {
         int acao;
         ArrayList<Abrigo> abrigos = new ArrayList<Abrigo>();
         ArrayList<Adotante> adotantes = new ArrayList<Adotante>();
-        ArrayList<Animais> animais = new ArrayList<Animais>();
+        ArrayList<Animal> animais = new ArrayList<Animal>();
         boolean isRunning = true;
         while(isRunning){
             clrscr();
@@ -109,33 +109,38 @@ public class App {
                 int idade = 0;
                 System.out.println("Digite o nome do animal");
                 nome = teclado.next();
-                System.out.println("Qual é o tipo do animal?");
-                raca = teclado.next();
-                System.out.println("Qual a cor do animal?");
-                cor = teclado.next();
-                System.out.println("Qual a idade do animal em anos? Se não souber deixe em branco (APENAS NUMEROS)");
-                idade = teclado.nextInt();
-                System.out.println("Qual a raça? Se não souber deixe em branco");
+                System.out.println("Qual a tipo?");
                 System.out.println("1 - Cachorro");
                 System.out.println("2 - Gato");
                 animal = teclado.nextInt();
+                System.out.println("Qual é a raça do animal? Se não souber deixe em branco");
+                raca = teclado.next();
+                System.out.println("Qual a cor do animal?");
+                cor = teclado.next();
+                System.out.println("Qual a idade do animal em anos? Se não souber digite 0 (APENAS NUMEROS)");
+                idade = teclado.nextInt();
                 if(animal == 1){
                     if(raca == "" && idade == 0){
-                        animais.add(new Cachorro(nome, "Cachorro", cor));
+                        animais.add(new Animal(nome, "Cachorro", cor));
                     }else if(raca == ""){
-                        animais.add(new Cachorro(nome, "Cachorro", cor, idade));
+                        animais.add(new Animal(nome, "Cachorro", cor, idade));
                     }else if(idade == 0){
-                        animais.add(new Cachorro(nome, "Cachorro", raca, cor));
+                        animais.add(new Animal(nome, "Cachorro", raca, cor));
+                    }else{
+                        animais.add(new Animal(nome, "Cachorro", raca, cor, idade));
                     }
                 }else{
                     if(raca == "" && idade == 0){
-                        animais.add(new Gato(nome, "Cachorro", cor));
+                        animais.add(new Animal(nome, "Gato", cor));
                     }else if(raca == ""){
-                        animais.add(new Gato(nome, "Cachorro", cor, idade));
+                        animais.add(new Animal(nome, "Gato", cor, idade));
                     }else if(idade == 0){
-                        animais.add(new Gato(nome, "Cachorro", raca, cor));
+                        animais.add(new Animal(nome, "Gato", raca, cor));
+                    }else{
+                        animais.add(new Animal(nome, "Gato", raca, cor, idade));
                     }
                 }
+                System.out.println("O animal foi criado com sucesso!");
                 System.out.println("Aperte Enter para voltar ao menu");
                 System.in.read();
 
@@ -145,14 +150,18 @@ public class App {
                 boolean animalExiste = false;
                 String nomeAbrigo;
                 String nomeAnimal;
-                System.out.println("Digite o nome do abrigo para registrar o adotante");
+                System.out.println("Digite o nome do abrigo para registrar o animal");
                 nomeAbrigo = teclado.next();
                 System.out.println("Digite o nome do animal a ser registrado");
                 nomeAnimal = teclado.next();
                 for(Abrigo abrigo : abrigos){
                     if(nomeAbrigo.equals(abrigo.getNomeAbrigo())){
+                        System.out.println(abrigo.getNomeAbrigo());
+                        System.out.println(nomeAnimal);
                         abrigoExiste = true;
-                        for(Animais animal : animais){
+                        for(Animal animal : animais){
+                            System.out.println(animal.getNome());
+                            System.out.println(nomeAnimal);
                             if(nomeAnimal.equals(animal.getNome())){
                                 animalExiste = true;
                                 abrigo.registrarAnimal(animal);
@@ -208,7 +217,7 @@ public class App {
                         for(Abrigo abrigo : abrigos){
                             if(nomeAbrigo.equals(abrigo.getNomeAbrigo())){
                                 abrigoExiste = true;
-                                for(Animais animal : abrigo.getAnimais()){
+                                for(Animal animal : abrigo.getAnimais()){
                                     if(nomeAnimal.equals(animal.getNome())){
                                         animalExiste = true;
                                         abrigo.adotarAnimal(adotante, animal);

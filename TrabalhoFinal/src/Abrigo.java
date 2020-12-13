@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 public class Abrigo {
-    private ArrayList<Animais> animais = new ArrayList<Animais>();
+    private ArrayList<Animal> animais = new ArrayList<Animal>();
     private String nomeAbrigo;
     private String nomeDono;
     private ArrayList<Adotante> adotantes = new ArrayList<Adotante>();
@@ -14,7 +14,7 @@ public class Abrigo {
         this.log.add(adotante.getNome() + " se registrou como adotante");
         this.adotantes.add(adotante);
     }
-    public void registrarAnimal(Animais animal){
+    public void registrarAnimal(Animal animal){
         this.log.add(animal.getNome() + " foi registrado no abrigo");
         this.animais.add(animal);
     }
@@ -23,15 +23,15 @@ public class Abrigo {
         return this.adotantes;
     }
     
-    public ArrayList<Animais> getAnimais(){
+    public ArrayList<Animal> getAnimais(){
         return this.animais;
     }
     public void listarAnimais(){
-        for(Animais animal : this.animais){
+        for(Animal animal : this.animais){
             System.out.println(animal.getNome() + " --- " + animal.getAnimal());
         }
     }
-    public void adotarAnimal(Adotante adotante, Animais animal){
+    public void adotarAnimal(Adotante adotante, Animal animal){
         this.log.add(animal.getNome() + " foi adotado por :" + adotante.getNome());
         this.animais.remove(animal);
         adotante.adotar(animal);

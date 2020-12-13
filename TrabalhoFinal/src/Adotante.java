@@ -4,7 +4,7 @@ public class Adotante {
     private String nome;
     private String cpf;
     private String endereco;
-    private ArrayList<Animais> animaisAdotados = new ArrayList<Animais>();
+    private ArrayList<Animal> animaisAdotados = new ArrayList<Animal>();
     
 
     public Adotante(String nome, String cpf, String endereco){
@@ -13,11 +13,11 @@ public class Adotante {
         this.endereco = endereco;
     }
 
-    public void adotar(Animais animal){
+    public void adotar(Animal animal){
         this.animaisAdotados.add(animal);
     }
 
-    public ArrayList<Animais> listarAnimais(){
+    public ArrayList<Animal> listarAnimais(){
         return this.animaisAdotados;
     }
     public void setNome(String nome){
