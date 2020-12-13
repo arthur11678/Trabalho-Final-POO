@@ -26,13 +26,13 @@ public class App {
                 clrscr();
                 String nomeAbrigo;
                 String nomeDono;
-                System.out.println("Digite o nome do abrigo");
+                System.out.println("Digite o nome do abrigo:");
                 nomeAbrigo = teclado.next();
-                System.out.println("Digite o nome do dono");
+                System.out.println("Digite o nome do dono:");
                 nomeDono = teclado.next();
                 abrigos.add(new Abrigo(nomeAbrigo, nomeDono));
                 System.out.println("Abrigo cadastrado com sucesso!");
-                System.out.println("Aperte Enter para voltar ao menu");
+                System.out.println("\nAperte Enter para voltar ao menu.");
                 System.in.read();
 
             }else if(acao == 1){
@@ -42,7 +42,7 @@ public class App {
                     System.out.println(Integer.toString(i) + " - " + abrigo.getNomeAbrigo());
                     i++;
                 }
-                System.out.println("Aperte Enter para voltar ao menu");
+                System.out.println("\nAperte Enter para voltar ao menu.");
                 System.in.read();
             }else if(acao == 2){
                 clrscr();
@@ -53,11 +53,11 @@ public class App {
                 nome = teclado.next();
                 System.out.println("Agora digite o CPF:");
                 cpf = teclado.next();
-                System.out.println("Por fim, digite o endereço:");
+                System.out.println("Por fim, digite o endereco:");
                 endereco = teclado.next();
                 adotantes.add(new Adotante(nome, cpf, endereco));
                 System.out.println("Adotante criado com sucesso!");
-                System.out.println("Aperte Enter para voltar ao menu");
+                System.out.println("\nAperte Enter para voltar ao menu.");
                 System.in.read();
 
             }else if(acao == 3){
@@ -66,9 +66,9 @@ public class App {
                 boolean adotanteExiste = false;
                 String nomeAbrigo;
                 String nomeAdotante;
-                System.out.println("Digite o nome do abrigo para registrar o adotante");
+                System.out.println("Digite o nome do abrigo para registrar o adotante:");
                 nomeAbrigo = teclado.next();
-                System.out.println("Digite o nome do adotante a ser registrado");
+                System.out.println("Digite o nome do adotante a ser registrado:");
                 nomeAdotante = teclado.next();
                 for(Abrigo abrigo : abrigos){
                     if(nomeAbrigo.equals(abrigo.getNomeAbrigo())){
@@ -82,13 +82,13 @@ public class App {
                     }
                 }
                 if(!abrigoExiste){
-                    System.out.println("O abrigo digitado não existe");
+                    System.out.println("O abrigo digitado não existe!");
                 }else if(!adotanteExiste){
-                    System.out.println("O adotante digitado não existe");
+                    System.out.println("O adotante digitado não existe!");
                 }else{
                     System.out.println("O adotante foi registrado com sucesso!");
                 }
-                System.out.println("Aperte Enter para voltar ao menu");
+                System.out.println("\nAperte Enter para voltar ao menu.");
                 System.in.read();
             }else if(acao == 4){
                 clrscr();
@@ -97,7 +97,7 @@ public class App {
                     System.out.println(Integer.toString(i) + " - " + adotante.getNome());
                     i++;
                 }
-                System.out.println("Aperte Enter para voltar ao menu");
+                System.out.println("\nAperte Enter para voltar ao menu.");
                 System.in.read();
 
             }else if(acao == 5){
@@ -107,17 +107,17 @@ public class App {
                 String raca;
                 String cor;
                 int idade = 0;
-                System.out.println("Digite o nome do animal");
+                System.out.println("Digite o nome do animal:");
                 nome = teclado.next();
                 System.out.println("Qual a tipo?");
                 System.out.println("1 - Cachorro");
                 System.out.println("2 - Gato");
                 animal = teclado.nextInt();
-                System.out.println("Qual é a raça do animal? Se não souber deixe em branco");
+                System.out.println("Qual é a raça do animal? Se não souber deixe em branco.");
                 raca = teclado.next();
                 System.out.println("Qual a cor do animal?");
                 cor = teclado.next();
-                System.out.println("Qual a idade do animal em anos? Se não souber digite 0 (APENAS NUMEROS)");
+                System.out.println("Qual a idade do animal em anos? Se não souber digite 0 (APENAS NUMEROS).");
                 idade = teclado.nextInt();
                 if(animal == 1){
                     if(raca == "" && idade == 0){
@@ -141,7 +141,7 @@ public class App {
                     }
                 }
                 System.out.println("O animal foi criado com sucesso!");
-                System.out.println("Aperte Enter para voltar ao menu");
+                System.out.println("\nAperte Enter para voltar ao menu.");
                 System.in.read();
 
             }else if(acao == 6){
@@ -150,9 +150,9 @@ public class App {
                 boolean animalExiste = false;
                 String nomeAbrigo;
                 String nomeAnimal;
-                System.out.println("Digite o nome do abrigo para registrar o animal");
+                System.out.println("Digite o nome do abrigo para registrar o animal:");
                 nomeAbrigo = teclado.next();
-                System.out.println("Digite o nome do animal a ser registrado");
+                System.out.println("Digite o nome do animal a ser registrado:");
                 nomeAnimal = teclado.next();
                 for(Abrigo abrigo : abrigos){
                     if(nomeAbrigo.equals(abrigo.getNomeAbrigo())){
@@ -166,20 +166,20 @@ public class App {
                     }
                 }
                 if(!abrigoExiste){
-                    System.out.println("O abrigo digitado não existe");
+                    System.out.println("O abrigo digitado não existe!");
                 }else if(!animalExiste){
-                    System.out.println("O animal digitado não existe");
+                    System.out.println("O animal digitado não existe!");
                 }else{
                     System.out.println("O animal foi registrado com sucesso!");
                 }
-                System.out.println("Aperte Enter para voltar ao menu");
+                System.out.println("\nAperte Enter para voltar ao menu.");
                 System.in.read();
 
             }else if(acao == 7){
                 clrscr();
                 boolean abrigoExiste = false;
                 String nomeAbrigo;
-                System.out.println("Digite o nome do abrigo para listar os animais");
+                System.out.println("Digite o nome do abrigo para listar os animais:");
                 nomeAbrigo = teclado.next();
                 for(Abrigo abrigo : abrigos){
                     if(nomeAbrigo.equals(abrigo.getNomeAbrigo())){
@@ -188,9 +188,9 @@ public class App {
                     }
                 }
                 if(!abrigoExiste){
-                    System.out.println("O abrigo digitado não existe");
+                    System.out.println("O abrigo digitado não existe!");
                 }
-                System.out.println("Aperte Enter para voltar ao menu");
+                System.out.println("\nAperte Enter para voltar ao menu.");
                 System.in.read();
 
             }else if(acao == 8){
@@ -201,11 +201,11 @@ public class App {
                 String nomeAbrigo;
                 String nomeAdotante;
                 String nomeAnimal;
-                System.out.println("Digite o nome do abrigo onde o animal esta");
+                System.out.println("Digite o nome do abrigo onde o animal esta:");
                 nomeAbrigo = teclado.next();
-                System.out.println("Digite o nome do adotante");
+                System.out.println("Digite o nome do adotante:");
                 nomeAdotante = teclado.next();
-                System.out.println("Digite o nome do animal");
+                System.out.println("Digite o nome do animal:");
                 nomeAnimal = teclado.next();
                 for(Adotante adotante : adotantes){
                     if(nomeAdotante.equals(adotante.getNome())){
@@ -224,15 +224,15 @@ public class App {
                     }
                 }
                 if(!adotanteExiste){
-                    System.out.println("O adotante digitado não existe");
+                    System.out.println("O adotante digitado não existe!");
                 }else if(!abrigoExiste){
-                    System.out.println("O abrigo digitado não existe");
+                    System.out.println("O abrigo digitado não existe!");
                 }else if(!animalExiste){
-                    System.out.println("O animal digitado não esta nesse abrigo ou não existe");
+                    System.out.println("O animal digitado não esta nesse abrigo ou não existe!");
                 }else{
                     System.out.println("O animal foi adotado com sucesso!");
                 }
-                System.out.println("Aperte Enter para voltar ao menu");
+                System.out.println("\nAperte Enter para voltar ao menu.");
                 System.in.read();
 
             }else if(acao == 9){
