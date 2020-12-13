@@ -140,10 +140,10 @@ public class App {
                 System.out.println("Digite o nome do animal a ser registrado");
                 nomeAnimal = teclado.next();
                 for(Abrigo abrigo : abrigos){
-                    if(abrigo.getNomeAbrigo() == nomeAbrigo){
+                    if(nomeAbrigo.equals(abrigo.getNomeAbrigo())){
                         abrigoExiste = true;
                         for(Animais animal : animais){
-                            if(animal.getNome() == nomeAnimal){
+                            if(nomeAnimal.equals(animal.getNome())){
                                 animalExiste = true;
                                 abrigo.registrarAnimal(animal);
                             }
@@ -167,7 +167,7 @@ public class App {
                 System.out.println("Digite o nome do abrigo para listar os animais");
                 nomeAbrigo = teclado.next();
                 for(Abrigo abrigo : abrigos){
-                    if(abrigo.getNomeAbrigo() == nomeAbrigo){
+                    if(nomeAbrigo.equals(abrigo.getNomeAbrigo())){
                         abrigoExiste = true;
                         abrigo.listarAnimais();
                     }
@@ -193,13 +193,13 @@ public class App {
                 System.out.println("Digite o nome do animal");
                 nomeAnimal = teclado.next();
                 for(Adotante adotante : adotantes){
-                    if(adotante.getNome() == nomeAdotante){
+                    if(nomeAdotante.equals(adotante.getNome())){
                         adotanteExiste = true;
                         for(Abrigo abrigo : abrigos){
-                            if(abrigo.getNomeAbrigo() == nomeAbrigo){
+                            if(nomeAbrigo.equals(abrigo.getNomeAbrigo())){
                                 abrigoExiste = true;
                                 for(Animais animal : abrigo.getAnimais()){
-                                    if(animal.getNome() == nomeAnimal){
+                                    if(nomeAnimal.equals(animal.getNome())){
                                         animalExiste = true;
                                         abrigo.adotarAnimal(adotante, animal);
                                     }
