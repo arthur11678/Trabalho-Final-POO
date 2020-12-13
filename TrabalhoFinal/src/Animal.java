@@ -4,6 +4,7 @@ public class Animal {
     private String raca;
     private String cor;
     private int idade;
+    private boolean adotado = false;
 
     public Animal(String nome, String animal, String cor){
         this.nome = nome;
@@ -46,6 +47,9 @@ public class Animal {
     public void setIdade(int idade){
         this.idade = idade;
     }
+    public void setAdotado(boolean adotado){
+        this.adotado = adotado;
+    }
     public String getNome(){
         return this.nome;
     }
@@ -60,5 +64,8 @@ public class Animal {
     }
     public int getIdade(){
         return this.idade;
+    }
+    public boolean isAdotado(){
+        return this.adotado;
     }
 }

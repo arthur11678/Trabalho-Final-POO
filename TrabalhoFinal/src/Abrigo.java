@@ -28,12 +28,13 @@ public class Abrigo {
     }
     public void listarAnimais(){
         for(Animal animal : this.animais){
+            if(!animal.isAdotado()){
             System.out.println(animal.getNome() + " --- " + animal.getAnimal());
+            }
         }
     }
     public void adotarAnimal(Adotante adotante, Animal animal){
         this.log.add(animal.getNome() + " foi adotado por :" + adotante.getNome());
-        this.animais.remove(animal);
         adotante.adotar(animal);
     }
     public void getLog(){
