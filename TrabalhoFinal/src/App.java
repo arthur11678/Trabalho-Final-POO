@@ -11,17 +11,18 @@ public class App {
         boolean isRunning = true;
         while(isRunning){
             clrscr();
-            System.out.println("1 - Registrar um abrigo");
-            System.out.println("2 - Listar abrigos");
-            System.out.println("3 - Criar um adotante");
-            System.out.println("4 - Registrar um adotante");
+            System.out.println("0 - Registrar um abrigo");
+            System.out.println("1 - Listar abrigos");
+            System.out.println("2 - Criar um adotante");
+            System.out.println("3 - Registrar um adotante");
+            System.out.println("4 - Listar Adotantes");
             System.out.println("5 - Criar um animal");
             System.out.println("6 - Registrar um animal");
             System.out.println("7 - Listar todos os animais de um abrigo");
             System.out.println("8 - Adotar um animal");
             System.out.println("9 - Fechar o programa");
             acao = teclado.nextInt();
-            if(acao == 1){
+            if(acao == 0){
                 clrscr();
                 String nomeAbrigo;
                 String nomeDono;
@@ -34,7 +35,7 @@ public class App {
                 System.out.println("Aperte Enter para voltar ao menu");
                 System.in.read();
 
-            }else if(acao == 2){
+            }else if(acao == 1){
                 clrscr();
                 int i = 1;
                 for(Abrigo abrigo : abrigos){
@@ -43,7 +44,7 @@ public class App {
                 }
                 System.out.println("Aperte Enter para voltar ao menu");
                 System.in.read();
-            }else if(acao == 3){
+            }else if(acao == 2){
                 clrscr();
                 String nome;
                 String cpf;
@@ -59,7 +60,7 @@ public class App {
                 System.out.println("Aperte Enter para voltar ao menu");
                 System.in.read();
 
-            }else if(acao == 4){
+            }else if(acao == 3){
                 clrscr();
                 boolean abrigoExiste = false;
                 boolean adotanteExiste = false;
@@ -86,6 +87,15 @@ public class App {
                     System.out.println("O adotante digitado não existe");
                 }else{
                     System.out.println("O adotante foi registrado com sucesso!");
+                }
+                System.out.println("Aperte Enter para voltar ao menu");
+                System.in.read();
+            }else if(acao == 4){
+                clrscr();
+                int i = 1;
+                for(Adotante adotante : adotantes){
+                    System.out.println(Integer.toString(i) + " - " + adotante.getNome());
+                    i++;
                 }
                 System.out.println("Aperte Enter para voltar ao menu");
                 System.in.read();
