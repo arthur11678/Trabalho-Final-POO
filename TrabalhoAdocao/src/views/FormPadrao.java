@@ -5,18 +5,34 @@
  */
 package views;
 
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Carla
  */
 public class FormPadrao extends javax.swing.JInternalFrame {
-
+    
+    JLabel jlConsulta;
+    JTextField jtfConsulta;
+    
     // Contrutor do método
     public FormPadrao() {
         initComponents();
         
-        jbSalvar.setEnabled(false);
-        jbCancelar.setEnabled(false);
+        jtfId.setEnabled(false);
+        habilitaCampos(false);
+        
+        // JLabel para Consulta
+        jlConsulta = new JLabel("Consulta");
+        jlConsulta.setBounds(9, 5, 50, 25);
+        jpnConsulta.add(jlConsulta);
+        
+        // JTextField para Consulta
+        jtfConsulta = new JTextField();
+        jtfConsulta.setBounds(60, 5, 700, 25);
+        jpnConsulta.add(jtfConsulta);
     }
 
     /**
@@ -40,7 +56,7 @@ public class FormPadrao extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jtfId = new javax.swing.JTextField();
         jtfDescricao = new javax.swing.JTextField();
-        jPanel3 = new javax.swing.JPanel();
+        jpnConsulta = new javax.swing.JPanel();
 
         jbNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/adicionar.png"))); // NOI18N
         jbNovo.setText("Novo");
@@ -122,7 +138,11 @@ public class FormPadrao extends javax.swing.JInternalFrame {
 
         jLabel2.setText("Descrição");
 
-        jtfId.setText("jTextField1");
+        jtfId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtfIdActionPerformed(evt);
+            }
+        });
 
         jtfDescricao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,15 +155,15 @@ public class FormPadrao extends javax.swing.JInternalFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(58, 58, 58)
+                .addGap(20, 20, 20)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jtfId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(102, 102, 102)
+                    .addComponent(jtfId, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(33, 33, 33)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(jtfDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jtfDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,17 +179,17 @@ public class FormPadrao extends javax.swing.JInternalFrame {
                 .addContainerGap(164, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(0, 240, 212));
+        jpnConsulta.setBackground(new java.awt.Color(0, 240, 212));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 776, Short.MAX_VALUE)
+        javax.swing.GroupLayout jpnConsultaLayout = new javax.swing.GroupLayout(jpnConsulta);
+        jpnConsulta.setLayout(jpnConsultaLayout);
+        jpnConsultaLayout.setHorizontalGroup(
+            jpnConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 185, Short.MAX_VALUE)
+        jpnConsultaLayout.setVerticalGroup(
+            jpnConsultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 189, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -177,8 +197,10 @@ public class FormPadrao extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpnConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -187,7 +209,7 @@ public class FormPadrao extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jpnConsulta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -199,23 +221,34 @@ public class FormPadrao extends javax.swing.JInternalFrame {
 
     private void jbNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNovoActionPerformed
         habilitaBotoes(false);
+        habilitaCampos(true);
+        limpaCampo();
+        jtfDescricao.requestFocus();
     }//GEN-LAST:event_jbNovoActionPerformed
 
     private void jbSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbSalvarActionPerformed
         habilitaBotoes(true);
+        habilitaCampos(false);
     }//GEN-LAST:event_jbSalvarActionPerformed
 
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
         habilitaBotoes(true);
+        habilitaCampos(false);
     }//GEN-LAST:event_jbCancelarActionPerformed
 
     private void jbAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbAlterarActionPerformed
         habilitaBotoes(false);
+        habilitaCampos(true);
+        jtfDescricao.requestFocus();
     }//GEN-LAST:event_jbAlterarActionPerformed
 
     private void jtfDescricaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfDescricaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtfDescricaoActionPerformed
+
+    private void jtfIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtfIdActionPerformed
     
     
     //Metodo para habilitar e desabilitar botões do formulário
@@ -226,19 +259,29 @@ public class FormPadrao extends javax.swing.JInternalFrame {
         jbSalvar.setEnabled(!estado);
         jbCancelar.setEnabled(!estado);
     }
+    
+    //Metodo para habilitar e desabilitar acesso aos campos de edição
+    public final void habilitaCampos(boolean estado){
+        jtfDescricao.setEnabled(estado);
+    }
+    
+    //Metodo para limpar os campos do formulário
+    public void limpaCampo(){
+        jtfDescricao.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JButton jbAlterar;
     private javax.swing.JButton jbCancelar;
     private javax.swing.JButton jbExcluir;
     private javax.swing.JButton jbFechar;
     private javax.swing.JButton jbNovo;
     private javax.swing.JButton jbSalvar;
+    private javax.swing.JPanel jpnConsulta;
     private javax.swing.JTextField jtfDescricao;
     private javax.swing.JTextField jtfId;
     // End of variables declaration//GEN-END:variables
